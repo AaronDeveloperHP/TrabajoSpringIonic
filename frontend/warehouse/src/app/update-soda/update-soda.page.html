@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/soda-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Update soda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="content">
+  <form [formGroup]="sodaForm" (ngSubmit)="onFormSubmit()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="productName" type="text"required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Format</ion-label>
+      <ion-input formControlName="productFormat" type="text" required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Pack</ion-label>
+      <ion-input formControlName="productPack" type="number" required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Number of packs</ion-label>
+      <ion-input formControlName="productQuantity" type="number" required>
+      </ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" shape="full" expand="block">Add Bicycle</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

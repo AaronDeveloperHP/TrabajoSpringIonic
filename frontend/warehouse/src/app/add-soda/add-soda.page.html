@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/soda-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Insert new soda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="content">
+  <form [formGroup]="sodaForm" (ngSubmit)="onFormSubmit()">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input formControlName="productName" type="text"required maxlength="20"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Format</ion-label>
+      <ion-select formControlName="productFormat" required>
+        <ion-select-option value="Can(33 cl)">Can(33 cl)</ion-select-option>
+        <ion-select-option value="Glass Bottle(25 cl)">Glass Bottle(25 cl)</ion-select-option>
+        <ion-select-option value="Medium Bottle(50 cl)">Medium Bottle(50 cl)</ion-select-option>
+        <ion-select-option value="Bottle(1,5 l)">Bottle(1,5 l)</ion-select-option>
+        <ion-select-option value="Big Bottle(2 l)">Big Bottle(2 l)</ion-select-option>
+      </ion-select>     
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Pack</ion-label>
+      <ion-select formControlName="productPack" required>
+        <ion-select-option value=2>2</ion-select-option>
+        <ion-select-option value=4>4</ion-select-option>
+        <ion-select-option value=6>6</ion-select-option>
+        <ion-select-option value=12>12</ion-select-option>
+        <ion-select-option value=24>24</ion-select-option>
+      </ion-select>      
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Number of packs</ion-label>
+      <ion-input formControlName="productQuantity" type="number" required>
+      </ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" shape="full" expand="block">Add Soda</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
